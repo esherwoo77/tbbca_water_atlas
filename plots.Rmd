@@ -1,0 +1,49 @@
+---
+title: "TB CSAP RSLR Estimates"
+author: "Ed Sherwood <esherwood@epchc.org>"
+date: "August 28, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(crosstalk)
+library(plotly)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Get Data
+Tampa Bay's Claimte Science Advisory Panel (TBCSAP 2015; <http://pinellas.ifas.ufl.edu/marine/documents/CSAP_SLR_Recommendation_FINAL.pdf>) have made regional recommendations for sea level rise projections to unify efforts of local scienticts, managers and planners. Relative  <http://www.corpsclimate.us/ccaceslcurves.cfm> . When using the USACE Sea Level Change Curve Calculator Tool, first select the “St. Petersburg, FL” gauge, then choose “NOAA et al. 2012” as the output agency and factor the projected SLC rate as “Regionally Corrected.”
+```{r slr_prjections}
+slr_wide <- read.csv("./data-raw/TB_CSAP_Regional_SLR_Recommendations.csv")
+
+head(slr)
+
+slr <- gather(data = slr_wide, curve, estimate, NOAA_LOW:NOAA_HIGH, factor_key = T)
+#slr_plot <- SharedData$new(slr, ~curve, group = "Choose a curve")
+#slr_group <- group_by(slr, curve)
+```
+
+## Make Some Interactive Plots
+
+Make some interactive plots to depict relative sea level rise at the St. Pete NOAA tidal gauge <https://tidesandcurrents.noaa.gov/stationhome.html?id=8726520>.
+
+```{r pressure, echo=FALSE}
+#Generic plot of various NOAA et al. 2012 projections
+noaa <- slr %>% 
+        group_by(curve) %>% 
+        plot_ly(x = ~Year, y = ~estimate) %>% 
+        add_lines(alpha = 0.2, name = "Other Projections")
+
+#Highlight a specific curve
+noaa %>% 
+  filter(curve == "NOAA_INT_HIGH") %>%
+  add_lines(name = "NOAA Intermediate High") %>% 
+  layout(title = "8726520, St. Petersburg, FL\nNOAA's Regional Rate: 0.00860 feet/yr",
+         yaxis = list(title="Relative Sea Level Rise (ft)"),
+         legend = list(x = 0.1, y = 0.9)) 
+
+#Create an html widget in default plotly account 
+api_create(x = last_plot(), filename = "slr_noaa_int_high", sharing = "public")
+
+```
