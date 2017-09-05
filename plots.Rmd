@@ -28,7 +28,7 @@ slr <- gather(data = slr_wide, curve, estimate, NOAA_LOW:NOAA_HIGH, factor_key =
 
 Make some interactive plots to depict relative sea level rise at the St. Pete NOAA tidal gauge <https://tidesandcurrents.noaa.gov/stationhome.html?id=8726520>.
 
-```{r pressure, echo=FALSE}
+```{r slr_plots, echo=FALSE}
 #Generic plot of various NOAA et al. 2012 projections
 noaa <- slr %>% 
         group_by(curve) %>% 
@@ -39,11 +39,199 @@ noaa <- slr %>%
 noaa %>% 
   filter(curve == "NOAA_INT_HIGH") %>%
   add_lines(name = "NOAA Intermediate High") %>% 
-  layout(title = "8726520, St. Petersburg, FL\nNOAA's Regional Rate: 0.00860 feet/yr",
+  layout(title = "St. Petersburg, FL, ID: 8726520\nNOAA's Regional Rate: 0.00860 feet/yr",
          yaxis = list(title="Relative Sea Level Rise (ft)"),
-         legend = list(x = 0.1, y = 0.9)) 
+         legend = list(x = 0.1, y = 0.9)) %>% 
+  layout(paper_bgcolor='transparent') 
 
 #Create an html widget in default plotly account 
 api_create(x = last_plot(), filename = "slr_noaa_int_high", sharing = "public")
 
 ```
+## Import Summary Data from Tampa Bay Blue Carbon Assessment Project
+```{r get_tbbca_data}
+#Get habitat extent data 
+extent <- read.csv("./data-raw/TBBCA_extent_summary_data.csv")
+head(extent)
+
+#Get GHG data
+ghg <- read.csv("./data-raw/TBBCA_cseq_summary_data.csv")
+head(ghg)
+```
+
+## Make a Highlighted Plot of a Select Run's Habitat Extent Changes
+```{r extent_plot_code}
+a <- list(
+  text = "Total Blue Carbon Habitats",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+
+b <- list(
+  text = "Mangroves",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+
+c <- list(
+  text = "Salt Marshes",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+
+d <- list(
+  text = "Salt Barrens",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+
+e <- list(
+  text = "Seagrass",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+
+var = "Run 1"
+
+tot_plot <- extent %>%
+        group_by(group) %>% 
+        filter(habitat=="Total Blue Carbon Habitats") %>% 
+        plot_ly(x = ~year, y = ~extent) %>% 
+        add_lines(line =list(dash = "dash", color = "#1f77b4"), 
+                  alpha = 0.2, name = "Other Runs", showlegend = FALSE)
+
+tot <- tot_plot %>%
+        filter(group == var) %>% 
+        add_lines(line=list(color="#ff7f0e"), name = var, showlegend = TRUE) %>%
+        layout(annotations = a) %>% 
+        layout(yaxis = list(title = "")) %>% 
+        layout(paper_bgcolor='transparent') %>% 
+        layout(legend = list(x = 0.01, y = 0.98))
+
+man_plot <- extent %>%
+        group_by(group) %>% 
+        filter(habitat=="Mangroves") %>% 
+        plot_ly(x = ~year, y = ~extent) %>% 
+        add_lines(line =list(dash = "dash", color = "#1f77b4"), 
+                  alpha = 0.2, name = "Other Runs", showlegend = FALSE)
+
+man <- man_plot %>%
+        filter(group == var) %>% 
+        add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
+        layout(annotations = b) %>% 
+        layout(yaxis = list(title = "")) %>% 
+        layout(paper_bgcolor='transparent') 
+
+sm_plot <- extent %>%
+        group_by(group) %>% 
+        filter(habitat=="Salt Marsh") %>% 
+        plot_ly(x = ~year, y = ~extent) %>% 
+        add_lines(line =list(dash = "dash", color = "#1f77b4"), 
+                  alpha = 0.2, name = "Other Runs", showlegend = FALSE)
+
+sm <- sm_plot %>%
+        filter(group == var) %>% 
+        add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
+        layout(annotations = c) %>% 
+        layout(yaxis = list(title = "Extent(hectares)")) %>% 
+        layout(paper_bgcolor='transparent') 
+
+sb_plot <- extent %>%
+        group_by(group) %>% 
+        filter(habitat=="Salt Barrens") %>% 
+        plot_ly(x = ~year, y = ~extent) %>% 
+        add_lines(line =list(dash = "dash", color = "#1f77b4"), 
+                  alpha = 0.2, name = "Other Runs", showlegend = FALSE)
+
+sb <- sb_plot %>%
+        filter(group == var) %>% 
+        add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
+        layout(annotations = d) %>%
+        layout(yaxis = list(title = "")) %>% 
+        layout(paper_bgcolor='transparent') 
+
+sg_plot <- extent %>%
+        group_by(group) %>% 
+        filter(habitat=="Seagrass") %>% 
+        plot_ly(x = ~year, y = ~extent) %>% 
+        add_lines(line =list(dash = "dash", color = "#1f77b4"),
+                  alpha = 0.2, name = "Other Runs", showlegend = FALSE)
+
+sg <- sg_plot %>%
+        filter(group == var) %>% 
+        add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
+        layout(annotations = e) %>%
+        layout(yaxis = list(title = "")) %>% 
+        layout(paper_bgcolor='transparent') 
+
+hab_extent <- subplot(tot, man, sm, sb, sg, 
+                      nrows = 5, shareX = TRUE, titleY = TRUE, titleX = FALSE)
+hab_extent                             
+api_create(x = hab_extent, filename = "run6_hab_extent", sharing = "public")
+```
+
+## Plot net CO2 sequestered estimates for select Runs
+```{r net_co2_plot_code}
+var = "Run 6"
+ghg2 <- ghg %>%
+            filter(group %in% c("Baseline", "Runs 1-6")) %>%
+            group_by(habitat)
+ghg3 <- ghg %>%
+            filter(group %in% c("Baseline", var)) %>%
+            group_by(habitat)
+
+error_plot <- plot_ly(data=ghg2[which(ghg2$habitat == 'Total Blue Carbon Habitats'),],
+                      x = ~year, y = ~net_seq, 
+                      error_y = list(type = "ghg2", array = ~error), 
+                      type = "scatter", mode = "lines+markers",
+                      name = "Total Blue Carbon Habitats") %>% 
+             add_trace(data = ghg2[which(ghg2$habitat == 'Mangroves'),],
+                       name = 'Mangroves') %>%
+             add_trace(data = ghg2[which(ghg2$habitat == 'Seagrass'),],
+                       name = 'Seagrass') %>%
+             add_trace(data = ghg2[which(ghg2$habitat == 'Salt Marsh'),],
+                       name = 'Salt Marsh') %>% 
+             add_trace(data = ghg2[which(ghg2$habitat == 'Salt Barrens'),],
+                       name = 'Salt Barrens') %>%
+             add_trace(data=ghg3, name = var,
+                      x = ~year, y = ~net_seq, color = I("black"), alpha = 0.3,
+                      line =list(dash = "dash")) %>% 
+             layout(yaxis = list(title="Projected Net Green House Gas Sequestered<br>by Habitat (tonnes CO<sup>2</sup> eq. &plusmn; 1 S.D.)")) %>%
+             layout(xaxis = list(title = "")) %>% 
+             layout(paper_bgcolor='transparent') %>% 
+             layout(legend = list(x = 0.01, y = 1))
+
+api_create(x = error_plot, filename = "run6_netco2", sharing = "public")
+```
+
+

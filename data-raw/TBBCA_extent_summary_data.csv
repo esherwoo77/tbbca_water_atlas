@@ -1,0 +1,151 @@
+year,group,habitat,extent
+2007,Run 1,Mangroves,5663
+2007,Run 1,Salt Marsh,2644
+2007,Run 1,Salt Barrens,614
+2007,Run 1,Seagrass,13480
+2007,Run 1,Total Blue Carbon Habitats,22400.6
+2007,Run 2,Mangroves,5663
+2007,Run 2,Salt Marsh,2644
+2007,Run 2,Salt Barrens,614
+2007,Run 2,Seagrass,13480
+2007,Run 2,Total Blue Carbon Habitats,22400.6
+2007,Run 3,Mangroves,5663
+2007,Run 3,Salt Marsh,2644
+2007,Run 3,Salt Barrens,614
+2007,Run 3,Seagrass,13480
+2007,Run 3,Total Blue Carbon Habitats,22400.6
+2007,Run 4,Mangroves,5663
+2007,Run 4,Salt Marsh,2644
+2007,Run 4,Salt Barrens,614
+2007,Run 4,Seagrass,13480
+2007,Run 4,Total Blue Carbon Habitats,22400.6
+2007,Run 5,Mangroves,5663
+2007,Run 5,Salt Marsh,2644
+2007,Run 5,Salt Barrens,614
+2007,Run 5,Seagrass,13480
+2007,Run 5,Total Blue Carbon Habitats,22400.6
+2007,Run 6,Mangroves,5663
+2007,Run 6,Salt Marsh,2644
+2007,Run 6,Salt Barrens,614
+2007,Run 6,Seagrass,13480
+2007,Run 6,Total Blue Carbon Habitats,22400.6
+2025,Run 1,Mangroves,5761.793801
+2025,Run 1,Salt Marsh,2679.861768
+2025,Run 1,Salt Barrens,716.0104724
+2025,Run 1,Seagrass,13498.80891
+2025,Run 1,Total Blue Carbon Habitats,22656.47495
+2050,Run 1,Mangroves,5904.023895
+2050,Run 1,Salt Marsh,2705.271785
+2050,Run 1,Salt Barrens,840.2105543
+2050,Run 1,Seagrass,13543.85893
+2050,Run 1,Total Blue Carbon Habitats,22993.36517
+2075,Run 1,Mangroves,6156.444061
+2075,Run 1,Salt Marsh,2753.111816
+2075,Run 1,Salt Barrens,1048.440692
+2075,Run 1,Seagrass,13553.17894
+2075,Run 1,Total Blue Carbon Habitats,23511.17551
+2100,Run 1,Mangroves,6491.144282
+2100,Run 1,Salt Marsh,2845.391877
+2100,Run 1,Salt Barrens,1163.400767
+2100,Run 1,Seagrass,13577.96896
+2100,Run 1,Total Blue Carbon Habitats,24077.90588
+2025,Run 2,Mangroves,5764.473803
+2025,Run 2,Salt Marsh,2703.671784
+2025,Run 2,Salt Barrens,716.0104724
+2025,Run 2,Seagrass,13472.40889
+2025,Run 2,Total Blue Carbon Habitats,22656.56495
+2050,Run 2,Mangroves,5928.993911
+2050,Run 2,Salt Marsh,2794.201843
+2050,Run 2,Salt Barrens,840.2105543
+2050,Run 2,Seagrass,13430.15886
+2050,Run 2,Total Blue Carbon Habitats,22993.56517
+2075,Run 2,Mangroves,6160.654064
+2075,Run 2,Salt Marsh,2922.631928
+2075,Run 2,Salt Barrens,1048.440692
+2075,Run 2,Seagrass,13379.67883
+2075,Run 2,Total Blue Carbon Habitats,23511.40551
+2100,Run 2,Mangroves,6466.724266
+2100,Run 2,Salt Marsh,3090.962039
+2100,Run 2,Salt Barrens,1163.400767
+2100,Run 2,Seagrass,13357.29881
+2100,Run 2,Total Blue Carbon Habitats,24078.38588
+2025,Run 3,Mangroves,5823.563842
+2025,Run 3,Salt Marsh,2657.701753
+2025,Run 3,Salt Barrens,776.7005124
+2025,Run 3,Seagrass,13549.59894
+2025,Run 3,Total Blue Carbon Habitats,22807.56505
+2050,Run 3,Mangroves,6210.784097
+2050,Run 3,Salt Marsh,2004.391322
+2050,Run 3,Salt Barrens,1089.020718
+2050,Run 3,Seagrass,14337.59946
+2050,Run 3,Total Blue Carbon Habitats,23641.7956
+2075,Run 3,Mangroves,2137.77141
+2075,Run 3,Salt Marsh,1763.281163
+2075,Run 3,Salt Barrens,1130.440746
+2075,Run 3,Seagrass,19451.51283
+2075,Run 3,Total Blue Carbon Habitats,24483.00615
+2100,Run 3,Mangroves,1969.501299
+2100,Run 3,Salt Marsh,1422.020938
+2100,Run 3,Salt Barrens,921.9306082
+2100,Run 3,Seagrass,19537.72289
+2100,Run 3,Total Blue Carbon Habitats,23851.17573
+2025,Run 4,Mangroves,5855.743863
+2025,Run 4,Salt Marsh,2693.471777
+2025,Run 4,Salt Barrens,776.7005124
+2025,Run 4,Seagrass,13481.73889
+2025,Run 4,Total Blue Carbon Habitats,22807.65505
+2050,Run 4,Mangroves,6311.814164
+2050,Run 4,Salt Marsh,2691.291775
+2050,Run 4,Salt Barrens,1089.020718
+2050,Run 4,Seagrass,13549.85894
+2050,Run 4,Total Blue Carbon Habitats,23641.9856
+2075,Run 4,Mangroves,7039.124644
+2075,Run 4,Salt Marsh,2616.811726
+2075,Run 4,Salt Barrens,1130.440746
+2075,Run 4,Seagrass,13696.87904
+2075,Run 4,Total Blue Carbon Habitats,24483.25615
+2100,Run 4,Mangroves,7391.144876
+2100,Run 4,Salt Marsh,2316.611528
+2100,Run 4,Salt Barrens,921.9306082
+2100,Run 4,Seagrass,13223.14872
+2100,Run 4,Total Blue Carbon Habitats,23852.83574
+2025,Run 5,Mangroves,5901.283893
+2025,Run 5,Salt Marsh,2684.691771
+2025,Run 5,Salt Barrens,896.0605911
+2025,Run 5,Seagrass,13589.65897
+2025,Run 5,Total Blue Carbon Habitats,23071.69522
+2050,Run 5,Mangroves,6334.884179
+2050,Run 5,Salt Marsh,2061.20136
+2050,Run 5,Salt Barrens,1336.850882
+2050,Run 5,Seagrass,14415.73951
+2050,Run 5,Total Blue Carbon Habitats,24148.67593
+2075,Run 5,Mangroves,2459.391622
+2075,Run 5,Salt Marsh,1910.47126
+2075,Run 5,Salt Barrens,1554.521026
+2075,Run 5,Seagrass,19630.62295
+2075,Run 5,Total Blue Carbon Habitats,25555.00686
+2100,Run 5,Mangroves,2648.281747
+2100,Run 5,Salt Marsh,1599.211055
+2100,Run 5,Salt Barrens,1376.280908
+2100,Run 5,Seagrass,20067.91324
+2100,Run 5,Total Blue Carbon Habitats,25691.68695
+2025,Run 6,Mangroves,5933.603914
+2025,Run 6,Salt Marsh,2720.111794
+2025,Run 6,Salt Barrens,896.1305912
+2025,Run 6,Seagrass,13523.22892
+2025,Run 6,Total Blue Carbon Habitats,23073.07522
+2050,Run 6,Mangroves,6435.804246
+2050,Run 6,Salt Marsh,2748.051813
+2050,Run 6,Salt Barrens,1336.660882
+2050,Run 6,Seagrass,13629.41899
+2050,Run 6,Total Blue Carbon Habitats,24149.93593
+2075,Run 6,Mangroves,7360.374856
+2075,Run 6,Salt Marsh,2763.901823
+2075,Run 6,Salt Barrens,1554.851026
+2075,Run 6,Seagrass,13877.56916
+2075,Run 6,Total Blue Carbon Habitats,25556.69686
+2100,Run 6,Mangroves,8069.775324
+2100,Run 6,Salt Marsh,2493.871645
+2100,Run 6,Salt Barrens,1376.710908
+2100,Run 6,Seagrass,13754.56907
+2100,Run 6,Total Blue Carbon Habitats,25694.92695

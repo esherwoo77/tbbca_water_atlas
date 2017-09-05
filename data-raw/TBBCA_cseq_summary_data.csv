@@ -1,0 +1,41 @@
+year,group,habitat,net_seq,error
+2007,Baseline,Mangroves,4256488.56,0
+2007,Baseline,Salt Marsh,664005.0639,0
+2007,Baseline,Salt Barrens,47076.11781,0
+2007,Baseline,Seagrass,5444827.86,0
+2007,Baseline,Total Blue Carbon Habitats,10412397.6,0
+2100,Run 1,Mangroves,7271924.881,0
+2100,Run 2,Mangroves,7268991.742,0
+2100,Run 3,Mangroves,5523441.299,0
+2100,Run 4,Mangroves,7701633.018,0
+2100,Run 5,Mangroves,5781259.277,0
+2100,Run 6,Mangroves,7959362.73,0
+2100,Run 1,Salt Barrens,148710.3367,0
+2100,Run 2,Salt Barrens,148710.3367,0
+2100,Run 3,Salt Barrens,154371.5768,0
+2100,Run 4,Salt Barrens,154371.5768,0
+2100,Run 5,Salt Barrens,187579.1689,0
+2100,Run 6,Salt Barrens,187594.9665,0
+2100,Run 1,Salt Marsh,-1902597.925,0
+2100,Run 2,Salt Marsh,-1934624.08,0
+2100,Run 3,Salt Marsh,-1274687.74,0
+2100,Run 4,Salt Marsh,-1975350.25,0
+2100,Run 5,Salt Marsh,-1256514.816,0
+2100,Run 6,Salt Marsh,-1956841.89,0
+2100,Run 1,Seagrass,8385871.604,0
+2100,Run 2,Seagrass,8372932.873,0
+2100,Run 3,Seagrass,8969759.949,0
+2100,Run 4,Seagrass,8394036.073,0
+2100,Run 5,Seagrass,8815930.551,0
+2100,Run 6,Seagrass,8431200.418,0
+2100,Run 1,Total Blue Carbon Habitats,13903908.9,0
+2100,Run 2,Total Blue Carbon Habitats,13856010.87,0
+2100,Run 3,Total Blue Carbon Habitats,13372885.08,0
+2100,Run 4,Total Blue Carbon Habitats,14274690.42,0
+2100,Run 5,Total Blue Carbon Habitats,13528254.18,0
+2100,Run 6,Total Blue Carbon Habitats,14621316.22,0
+2100,Runs 1-6,Mangroves,6917768.825,1018228.676
+2100,Runs 1-6,Salt Marsh,-1716769.45,464658.1822
+2100,Runs 1-6,Salt Barrens,163556.3271,18785.52236
+2100,Runs 1-6,Seagrass,8561621.911,261853.4113
+2100,Runs 1-6,Total Blue Carbon Habitats,13926177.61,1763525.792
