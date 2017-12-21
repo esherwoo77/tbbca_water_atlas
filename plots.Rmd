@@ -17,9 +17,10 @@ Tampa Bay's Claimte Science Advisory Panel (TBCSAP 2015; <http://pinellas.ifas.u
 ```{r slr_prjections}
 slr_wide <- read.csv("./data-raw/TB_CSAP_Regional_SLR_Recommendations.csv")
 
-head(slr)
+head(slr_wide)
 
 slr <- gather(data = slr_wide, curve, estimate, NOAA_LOW:NOAA_HIGH, factor_key = T)
+head(slr)
 #slr_plot <- SharedData$new(slr, ~curve, group = "Choose a curve")
 #slr_group <- group_by(slr, curve)
 ```
