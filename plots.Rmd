@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Get Data
-Tampa Bay's Claimte Science Advisory Panel (TBCSAP 2015; <http://pinellas.ifas.ufl.edu/marine/documents/CSAP_SLR_Recommendation_FINAL.pdf>) have made regional recommendations for sea level rise projections to unify efforts of local scienticts, managers and planners. Relative  <http://www.corpsclimate.us/ccaceslcurves.cfm> . When using the USACE Sea Level Change Curve Calculator Tool, first select the “St. Petersburg, FL” gauge, then choose “NOAA et al. 2012” as the output agency and factor the projected SLC rate as “Regionally Corrected.”
+Tampa Bay's Climate Science Advisory Panel (TBCSAP 2015; <http://pinellas.ifas.ufl.edu/marine/documents/CSAP_SLR_Recommendation_FINAL.pdf>) have made regional recommendations for sea level rise projections to unify efforts of local scienticts, managers and planners. Relative  <http://www.corpsclimate.us/ccaceslcurves.cfm> . When using the USACE Sea Level Change Curve Calculator Tool, first select the “St. Petersburg, FL” gauge, then choose “NOAA et al. 2012” as the output agency and factor the projected SLC rate as “Regionally Corrected.”
 ```{r slr_prjections}
 slr_wide <- read.csv("./data-raw/TB_CSAP_Regional_SLR_Recommendations.csv")
 
