@@ -18,7 +18,7 @@ Tampa Bay's Climate Science Advisory Panel (TBCSAP 2015; <http://pinellas.ifas.u
 The recommendations have been updated and are superceded by (TBCSAP 2019; <https://drive.google.com/file/d/1c_KTSJ4TgVX9IugnyDadr2Hc0gjAuQg2/view>).
 
 ```{r slr_prjections}
-slr_wide <- read.csv("./data-raw/TB_CSAP_Regional_SLR_Recommendations_Updated2019.csv")
+slr_wide <- read.csv("./data-raw/TB_CSAP_Regional_SLR_Recommendations.csv")
 
 head(slr_wide)
 
@@ -51,7 +51,7 @@ noaa %>%
 #Create an html widget in default plotly account 
 api_create(x = last_plot(), filename = "slr_noaa_int_low", sharing = "public")
 
-#Highlight a Int. High curve
+#Highlight a High curve
 noaa %>% 
   filter(curve == "NOAA_INT_HIGH") %>%
   add_lines(name = "NOAA Intermediate High") %>% 
@@ -137,7 +137,7 @@ e <- list(
   showarrow = FALSE
 )
 
-var = "Run 1"
+var = "Run 6"
 
 tot_plot <- extent %>%
         group_by(group) %>% 
@@ -151,7 +151,7 @@ tot <- tot_plot %>%
         add_lines(line=list(color="#ff7f0e"), name = var, showlegend = TRUE) %>%
         layout(annotations = a) %>% 
         layout(yaxis = list(title = "")) %>% 
-        layout(paper_bgcolor='transparent') %>% 
+        layout(paper_bgcolor='white') %>% 
         layout(legend = list(x = 0.01, y = 0.98))
 
 man_plot <- extent %>%
@@ -166,7 +166,7 @@ man <- man_plot %>%
         add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
         layout(annotations = b) %>% 
         layout(yaxis = list(title = "")) %>% 
-        layout(paper_bgcolor='transparent') 
+        layout(paper_bgcolor='white') 
 
 sm_plot <- extent %>%
         group_by(group) %>% 
@@ -179,8 +179,8 @@ sm <- sm_plot %>%
         filter(group == var) %>% 
         add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
         layout(annotations = c) %>% 
-        layout(yaxis = list(title = "Extent(hectares)")) %>% 
-        layout(paper_bgcolor='transparent') 
+        layout(yaxis = list(title = "Extent (hectares)")) %>% 
+        layout(paper_bgcolor='white') 
 
 sb_plot <- extent %>%
         group_by(group) %>% 
@@ -194,7 +194,7 @@ sb <- sb_plot %>%
         add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
         layout(annotations = d) %>%
         layout(yaxis = list(title = "")) %>% 
-        layout(paper_bgcolor='transparent') 
+        layout(paper_bgcolor='white') 
 
 sg_plot <- extent %>%
         group_by(group) %>% 
@@ -208,7 +208,7 @@ sg <- sg_plot %>%
         add_lines(line=list(color="#ff7f0e"), name = var, showlegend = FALSE) %>%
         layout(annotations = e) %>%
         layout(yaxis = list(title = "")) %>% 
-        layout(paper_bgcolor='transparent') 
+        layout(paper_bgcolor='white') 
 
 hab_extent <- subplot(tot, man, sm, sb, sg, 
                       nrows = 5, shareX = TRUE, titleY = TRUE, titleX = FALSE)
@@ -244,7 +244,7 @@ error_plot <- plot_ly(data=ghg2[which(ghg2$habitat == 'Total Blue Carbon Habitat
                       line =list(dash = "dash")) %>% 
              layout(yaxis = list(title="Projected Net Green House Gas Sequestered<br>by Habitat (tonnes CO<sup>2</sup> eq. &plusmn; 1 S.D.)")) %>%
              layout(xaxis = list(title = "")) %>% 
-             layout(paper_bgcolor='transparent') %>% 
+             layout(paper_bgcolor='white') %>% 
              layout(legend = list(x = 0.01, y = 1))
 
 api_create(x = error_plot, filename = "run6_netco2", sharing = "public")
