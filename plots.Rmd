@@ -245,7 +245,7 @@ error_plot <- plot_ly(data=ghg2[which(ghg2$habitat == 'Total Blue Carbon Habitat
              layout(yaxis = list(title="Projected Net Green House Gas Sequestered<br>by Habitat (tonnes CO<sup>2</sup> eq. &plusmn; 1 S.D.)")) %>%
              layout(xaxis = list(title = "")) %>% 
              layout(paper_bgcolor='white') %>% 
-             layout(legend = list(x = 0.01, y = 1))
+             layout(legend = list(x = 0.01, y = 1, bgcolor = 'rgba(0,0,0,0)'))
 
 api_create(x = error_plot, filename = "run6_netco2", sharing = "public")
 ```
